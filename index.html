@@ -29,10 +29,10 @@
                             <p class="card-text">Inserisci la tua mail e verificheremo se è presente nei nostri
                                 archivi.</p>
                             <div class="input-group text-white bg-dark mb-3">
-                                <input type="text" class="form-control" placeholder="Inserisci la tua email">
-                                <span class="input-group-text" id="basic-addon2">@bikermice.it</span>
+                                <input type="text" class="form-control" placeholder="Inserisci la tua mail"
+                                    id="user-input">
                             </div>
-                            <a href="#" class="btn btn-light">Verifica!</a>
+                            <button class="btn btn-light" id="email-btn">Verifica!</button>
                         </div>
                     </div>
                 </div>
@@ -43,22 +43,35 @@
                         <h5 class="card-header">Dice Comparator Over65</h5>
                         <div class="card-body">
                             <p class="card-text">Tenta la fortuna contro il computer!.</p>
-                            <a href="#" class="btn btn-light">Sarò fortunato?</a>
+                            <button class="btn btn-light" id="dice-btn">Sarò fortunato?</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Answers Email Card -->
+                <div class="card text-center text-center text-white bg-dark my-3 d-none" id="answer-card">
+                    <div class="card-body">
+                        <p class="card-text" id="email-result"></p>
+                    </div>
+                </div>
+
+                <!-- Answers Dice Card -->
+                <div class="card text-center text-center text-white bg-dark my-3 d-none" id="dice-card">
+                    <div class="card-body">
+                        <p class="card-text" id="dice-result"></p>
+                    </div>
+                </div>
             </div>
-        </div>
     </main>
 
 
     <!-- Script -->
-    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/script.js"></script>
 
     <!--  Bootstrap script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 </body>
 
 </html>
