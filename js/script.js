@@ -22,3 +22,8 @@ for (let i = 0; i < mailList.length; i++) {
     }
 }
 
+// Conditional Validation
+if (isValid) {
+    console.log('Sei presente nei nostri sistemi!');
+}
+else console.log('Non puoi accedere!');
