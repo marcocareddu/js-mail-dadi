@@ -10,8 +10,13 @@ console.log('JS OK')
 const mailList = ['pistone@bikermice.it', 'sterzo@bikermice.it', 'turbo@bikermice.it'];
 const emailButton = document.getElementById('email-btn');
 
+// Link to DOM element
+const emailElement = document.getElementById('email-result');
+const emailCard = document.getElementById('email-card');
+
 // Validation variable
 let isValid = '';
+let messageResult;
 
 // *PHASE 2
 // Activate cicle at click
@@ -30,9 +35,20 @@ emailButton.addEventListener('click', function () {
 
     // Conditional Validation
     if (isValid) {
-        console.log('Sei presente nei nostri sistemi!');
-    } else console.log('Non puoi accedere!');
+        messageResult = 'Sei presente nei nostri sistemi!';
+    } else {
+        messageResult = 'Non puoi accedere!';
+    }
+
+    // Display Element in DOM
+    emailCard.classList.remove('d-none');
+
+    // Display result into element
+    emailElement.innerText = messageResult;
 })
+
+
+
 
 
 
