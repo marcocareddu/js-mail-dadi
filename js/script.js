@@ -37,8 +37,8 @@ const numbersGeneratedUser = [];
 const numbersGeneratedCPU = [];
 
 // Create variables
-let sumUser;
-let sumCPU;
+let sumUser = 0;
+let sumCPU = 0;
 
 // Generate 2 random numbers
 for (let i = 0; i < 2; i++) {
@@ -46,5 +46,9 @@ for (let i = 0; i < 2; i++) {
     const randomCPU = Math.floor(Math.random() * 50) + 1;
     numbersGeneratedUser.push(randomUser);
     numbersGeneratedCPU.push(randomCPU);
+    // Sum random numbers
+    sumUser += randomUser;
+    sumCPU += randomCPU;
 }
 console.log(numbersGeneratedCPU, numbersGeneratedUser);
+console.log(sumUser, sumCPU);
