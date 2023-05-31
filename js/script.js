@@ -46,9 +46,20 @@ for (let i = 0; i < 2; i++) {
     const randomCPU = Math.floor(Math.random() * 50) + 1;
     numbersGeneratedUser.push(randomUser);
     numbersGeneratedCPU.push(randomCPU);
+
     // Sum random numbers
     sumUser += randomUser;
     sumCPU += randomCPU;
 }
-console.log(numbersGeneratedCPU, numbersGeneratedUser);
-console.log(sumUser, sumCPU);
+console.log(numbersGeneratedUser, numbersGeneratedCPU);
+
+// Print result
+console.log('Hai totalizzato: ' + sumUser + ' punti');
+console.log('La CPU ha totalizzato: ' + sumCPU + ' punti');
+
+// Verify which is higher
+if (sumUser > sumCPU) {
+    console.log('Hai vinto!');
+} else {
+    console.log('Ha vinto la CPU!');
+}
