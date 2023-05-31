@@ -6,26 +6,33 @@ console.log('JS OK')
 /**************************************************/
 
 // *PHASE 1
-// Create array
+// Create array & variables
 const mailList = ['pistone@bikermice.it', 'sterzo@bikermice.it', 'turbo@bikermice.it'];
+const emailButton = document.getElementById('email-btn');
 
-// Ask user's email
-const userInput = prompt('Qual è la tua email?').trim();
+// Validation variable
 let isValid = '';
 
 // *PHASE 2
-// FOR cicle 
-for (let i = 0; i < mailList.length; i++) {
-    console.log(mailList[i]);
-    if (userInput === mailList[i]) {
-        isValid = true;
-    }
-}
+// Activate cicle at click
+emailButton.addEventListener('click', function () {
 
-// Conditional Validation
-if (isValid) {
-    console.log('Sei presente nei nostri sistemi!');
-} else console.log('Non puoi accedere!');
+    // Ask user's email
+    const userInput = document.getElementById('user-input').value;
+    console.log(userInput);
+
+    // FOR cicle 
+    for (let i = 0; i < mailList.length; i++) {
+        if (userInput === mailList[i]) {
+            isValid = true;
+        }
+    }
+
+    // Conditional Validation
+    if (isValid) {
+        console.log('Sei presente nei nostri sistemi!');
+    } else console.log('Non puoi accedere!');
+})
 
 
 
