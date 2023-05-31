@@ -63,6 +63,8 @@ const diceButton = document.getElementById('dice-btn');
 // Link to DOM element
 const diceElement = document.getElementById('dice-result');
 const diceCard = document.getElementById('dice-card');
+const cpuScore = document.getElementById('cpu-score');
+const userScore = document.getElementById('user-score');
 
 // Create variables
 let sumUser = 0;
@@ -101,6 +103,8 @@ diceButton.addEventListener('click', function () {
 
     // Display result into element
     diceElement.innerText = diceResult;
+    cpuScore.innerText = 'La CPU ha totalizzato: ' + sumCPU + ' punti';
+    userScore.innerText = 'Hai totalizzato: ' + sumUser + ' punti';
 
     // Erase all, ready for new click
     numbersGeneratedUser = [];
