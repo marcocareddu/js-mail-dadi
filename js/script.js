@@ -56,33 +56,55 @@ emailButton.addEventListener('click', function () {
 /**                ESERCIZIO DADI                **/
 /**************************************************/
 // Create Arrays 
-const numbersGeneratedUser = [];
-const numbersGeneratedCPU = [];
+let numbersGeneratedUser = [];
+let numbersGeneratedCPU = [];
+const diceButton = document.getElementById('dice-btn');
+
+// Link to DOM element
+const diceElement = document.getElementById('dice-result');
+const diceCard = document.getElementById('dice-card');
 
 // Create variables
 let sumUser = 0;
 let sumCPU = 0;
+let diceResult;
 
-// Generate 2 random numbers
-for (let i = 0; i < 2; i++) {
-    const randomUser = Math.floor(Math.random() * 50) + 1;
-    const randomCPU = Math.floor(Math.random() * 50) + 1;
-    numbersGeneratedUser.push(randomUser);
-    numbersGeneratedCPU.push(randomCPU);
+diceButton.addEventListener('click', function () {
+    // Generate 2 random numbers
+    for (let i = 0; i < 2; i++) {
+        const randomUser = Math.floor(Math.random() * 50) + 1;
+        const randomCPU = Math.floor(Math.random() * 50) + 1;
+        numbersGeneratedUser.push(randomUser);
+        numbersGeneratedCPU.push(randomCPU);
 
-    // Sum random numbers
-    sumUser += randomUser;
-    sumCPU += randomCPU;
-}
-console.log(numbersGeneratedUser, numbersGeneratedCPU);
+        // Sum random numbers
+        sumUser += randomUser;
+        sumCPU += randomCPU;
+    }
+    console.log(numbersGeneratedUser, numbersGeneratedCPU);
 
-// Print result
-console.log('Hai totalizzato: ' + sumUser + ' punti');
-console.log('La CPU ha totalizzato: ' + sumCPU + ' punti');
+    // Print result
+    console.log('Hai totalizzato: ' + sumUser + ' punti');
+    console.log('La CPU ha totalizzato: ' + sumCPU + ' punti');
 
-// Verify which is higher
-if (sumUser > sumCPU) {
-    console.log('Hai vinto!');
-} else {
-    console.log('Ha vinto la CPU!');
-}
+    // Verify which is higher
+    if (sumUser > sumCPU) {
+        console.log('Hai vinto!');
+        diceResult = 'Hai vinto!';
+    } else {
+        console.log('Ha vinto la CPU!');
+        diceResult = 'Ha vinto la CPU!';
+    }
+
+    // Display Dice Element
+    diceCard.classList.remove('d-none');
+
+    // Display result into element
+    diceElement.innerText = diceResult;
+
+    // Erase all, ready for new click
+    numbersGeneratedUser = [];
+    sumUser = 0;
+    numbersGeneratedCPU = [];
+    sumCPU = 0;
+})
