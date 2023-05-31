@@ -39,3 +39,12 @@ const numbersGeneratedCPU = [];
 // Create variables
 let sumUser;
 let sumCPU;
+
+// Generate 2 random numbers
+for (let i = 0; i < 2; i++) {
+    const randomUser = Math.floor(Math.random() * 50) + 1;
+    const randomCPU = Math.floor(Math.random() * 50) + 1;
+    numbersGeneratedUser.push(randomUser);
+    numbersGeneratedCPU.push(randomCPU);
+}
+console.log(numbersGeneratedCPU, numbersGeneratedUser);
