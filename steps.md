@@ -23,3 +23,31 @@ BONUS:
 - Nell'esercizio dadi, mettiamo un tasto "Gioca" ed eseguiamo la logica di gioco al click del bottone
 - stampiamo i risultati di entrambi gli esercizi in pagina
   -->
+
+# Mail
+## Fase preliminare
+- Creare un array di email - `mailList`.
+- Chiedere all'utente una mail - `userInput`.
+## Svolgimento
+- **PER** Ogni elemento nell'array `mailList`:
+    - **SE** il valore dell'elemento è uguale a `userInput` stampa: *Benvenuto*.
+    - **ALTRIMENTI** stampa: *Non hai accesso!*.
+
+<br>
+
+# Gioco dei Dadi
+## Fase preliminare
+- Creare un Array in cui salvare i numeri dell'utente `numbersGeneratedUser`.
+- Creare un Array in cui salvare i numeri della CPU `numbersGeneratedCPU`.
+- Creare una variabile `let sumUser`
+- Creare una variabile `let sumCPU`
+## Svolgimento
+- Generare 2 numeri random per l'utente e salvarli nell'array `numbersGeneratedUser`.
+- Generare 2 numeri random per la CPU e salvarli nell'array `numbersGeneratedCPU`.
+- **PER  OGNI** elemento nell'array `numbersGeneratedUser`
+    - Ogni ciclo somma il valore dell'elemento e lo salva in `sumUser`.
+- **PER  OGNI** elemento nell'array `numbersGeneratedCPU`.
+    - Ogni ciclo somma il valore dell'elemento e lo salva in `sumCPU`.
+- **SE** `sumUser` è maggiore di `sumCPU`:
+    - Stampa: *Ha vinto l'utente!*
+- **ALTRIMENTI** Stampa: *Ha vinto il computer!*
