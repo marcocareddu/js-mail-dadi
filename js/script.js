@@ -14,37 +14,33 @@ const emailButton = document.getElementById('email-btn');
 const emailElement = document.getElementById('email-result');
 const emailCard = document.getElementById('email-card');
 
-// Validation variable
-let isValid = '';
-let messageResult;
-
 // *PHASE 2
 // Activate cicle at click
 emailButton.addEventListener('click', function () {
+
+    // Validation variable
+    let isValid = false;
 
     // Ask user's email
     const userInput = document.getElementById('user-input').value;
     console.log(userInput);
 
     // FOR cicle 
-    for (let i = 0; i < mailList.length; i++) {
+    for (let i = 0; i < mailList.length && !isValid; i++) {
         if (userInput === mailList[i]) {
             isValid = true;
         }
     }
 
-    // Conditional Validation
-    if (isValid) {
-        messageResult = 'Sei presente nei nostri sistemi!';
-    } else {
-        messageResult = 'Non puoi accedere!';
-    }
+    const messageResult = isValid ? 'Sei presente nei nostri sistemi!' : 'Non puoi accedere!';
 
     // Display Element in DOM
     emailCard.classList.remove('d-none');
 
     // Display result into element
     emailElement.innerText = messageResult;
+
+
 })
 
 
